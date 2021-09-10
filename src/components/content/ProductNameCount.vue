@@ -143,7 +143,7 @@ export default {
             },
           },
           interval: 2000,
-          max:10000
+          max: 10000,
         },
         {
           type: "value",
@@ -153,7 +153,7 @@ export default {
             formatter: "{value} 个",
           },
           interval: 10,
-          max:50
+          max: 50,
         },
       ],
       series: [

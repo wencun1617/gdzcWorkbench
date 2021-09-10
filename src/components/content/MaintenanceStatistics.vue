@@ -8,7 +8,12 @@
 
     <!-- 月份选择器 -->
     <div class="month-picker">
-      <a-month-picker :default-value="moment(getCurrentDate(),'YYYY-MM')" @change="changeDataHandle" valueFormat="yyyy-MM" :allowClear="false"/>
+      <a-month-picker
+        :default-value="moment(getCurrentDate(), 'YYYY-MM')"
+        @change="changeDataHandle"
+        valueFormat="yyyy-MM"
+        :allowClear="false"
+      />
     </div>
   </div>
 </template>
@@ -16,15 +21,15 @@
 <script>
 import { getAsstLsRepairCount } from "@/services/home";
 
-import moment from 'moment'
-import 'moment/locale/zh-cn'
-moment.locale('zh-cn')
+import moment from "moment";
+import "moment/locale/zh-cn";
+moment.locale("zh-cn");
 
 export default {
   data() {
     return {
       moment,
-      year_month: moment().format('YYYY-MM'),
+      year_month: moment().format("YYYY-MM"),
       option: {},
       color: ["#0BB572", "#ED6F57", "#2F64FC"], // 柱状图各个颜色
     };
@@ -82,7 +87,7 @@ export default {
       }
     },
     changeDataHandle(checkItem) {
-      this.year_month = checkItem.format('yyyy-MM')
+      this.year_month = checkItem.format("yyyy-MM");
       this._getAsstLsRepairCount({
         hbdwbh: this.hbdwbh,
         year_month: this.year_month,
@@ -90,7 +95,7 @@ export default {
     },
     getCurrentDate() {
       return new Date().toLocaleDateString();
-    }
+    },
   },
   mounted() {
     this.option = {
@@ -121,8 +126,8 @@ export default {
       grid: {
         left: "10%",
         right: "10%",
-        top:"16%",
-        bottom:"12%"
+        top: "16%",
+        bottom: "12%",
       },
       xAxis: [
         {

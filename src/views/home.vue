@@ -44,7 +44,7 @@
             class="shortcut-item"
             v-for="(item, index) in shortcutList"
             :key="index"
-          >
+          @click="navigateHandle">
             <img :src="shortcutIcon[index]" alt="" />
             <div class="shortcut-name">
               {{ item.field }}
@@ -272,6 +272,11 @@ export default {
         }
       }
     },
+
+    // navigateHandle
+    navigateHandle() {
+       this.$router.push('/ygt/createview/'+ '481bf7cdaaf74b70a483204181c7e943')
+    }
   },
   mounted() {
     // 模拟登录
